@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">UIAndroid</string>
+    <string name="app_label">UIAndroid.com examples</string>
+
+    <string name="reveal_effect_label">Reveal effect</string>
 
     <string name="wrong_device_version">Min sdk %d is required to run this example</string>
 </resources>
