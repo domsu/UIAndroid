@@ -6,7 +6,9 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewAnimationUtils;
@@ -37,8 +39,7 @@ public class RevealCustomColorActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @TargetApi(21)
-    @SuppressLint("NewApi")
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @OnClick(R.id.activity_reveal_custom_color_clear)
     protected void onClearClick() {
         final ViewGroupOverlay overlay = container.getOverlay();
@@ -46,7 +47,7 @@ public class RevealCustomColorActivity extends AppCompatActivity {
         final View revealView = new View(this);
         revealView.setBottom(container.getHeight());
         revealView.setRight(container.getWidth());
-        revealView.setBackgroundColor(getColor(R.color.colorAccent));
+        revealView.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
         overlay.add(revealView);
 
         final Animator revealAnimator =

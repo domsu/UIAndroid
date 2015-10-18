@@ -5,13 +5,15 @@ import android.app.Activity;
 public class ExampleDetail {
 
     private final String title;
-    private final Class<? extends Activity> activity;
     private final String url;
+    private final int minSdk;
+    private final Class<? extends Activity> activity;
 
-    public ExampleDetail(String title, String url, Class<? extends Activity> activity) {
+    public ExampleDetail(String title, String url, int minSdk, Class<? extends Activity> activity) {
         this.title = title;
-        this.activity = activity;
         this.url = url;
+        this.minSdk = minSdk;
+        this.activity = activity;
     }
 
     public String getTitle() {
@@ -24,5 +26,9 @@ public class ExampleDetail {
 
     public String getUrl() {
         return url;
+    }
+
+    public int getMinSdk() {
+        return minSdk;
     }
 }

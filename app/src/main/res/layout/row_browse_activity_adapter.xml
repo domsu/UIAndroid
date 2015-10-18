@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:text="Sample title"
-        android:textSize="17dp" />
+        android:textSize="16dp" />
 
     <ImageView
         android:id="@+id/row_browse_activity_adapter_icon"

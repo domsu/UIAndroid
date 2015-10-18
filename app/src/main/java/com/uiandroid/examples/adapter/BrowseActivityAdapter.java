@@ -2,6 +2,7 @@ package com.uiandroid.examples.adapter;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,7 +72,15 @@ class ViewHolder extends RecyclerView.ViewHolder {
 
     @OnClick(R.id.row_browse_activity_adapter_root)
     protected void onRootViewClick() {
-        activity.startActivity(new Intent(activity, exampleDetail.getActivity()));
+        if (isDeviceOk()) {
+            activity.startActivity(new Intent(activity, exampleDetail.getActivity()));
+        } else {
+            Snackbar.make(
+                    activity.findViewById(android.R.id.content),
+                    String.format(activity.getString(R.string.wrong_device_version), exampleDetail.getMinSdk()),
+                    Snackbar.LENGTH_LONG
+            ).show();
+        }
     }
 
     @OnClick(R.id.row_browse_activity_adapter_icon)
@@ -80,5 +89,9 @@ class ViewHolder extends RecyclerView.ViewHolder {
         intent.setData(Uri.parse(exampleDetail.getUrl()));
 
         activity.startActivity(intent);
+    }
+
+    private boolean isDeviceOk() {
+        return android.os.Build.VERSION.SDK_INT >= exampleDetail.getMinSdk();
     }
 }
