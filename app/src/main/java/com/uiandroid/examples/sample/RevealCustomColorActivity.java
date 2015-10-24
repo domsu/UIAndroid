@@ -41,9 +41,9 @@ public class RevealCustomColorActivity extends AppCompatActivity {
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @OnClick(R.id.activity_reveal_custom_color_clear)
     protected void onClearClick() {
-        final ViewGroupOverlay overlay = container.getOverlay();
+        ViewGroupOverlay overlay = container.getOverlay();
 
-        final View revealView = new View(this);
+        View revealView = new View(this);
         revealView.setBottom(container.getHeight());
         revealView.setRight(container.getWidth());
         revealView.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
@@ -51,7 +51,7 @@ public class RevealCustomColorActivity extends AppCompatActivity {
         overlay.add(revealView);
 
         float radius = (float) Math.sqrt(Math.pow(container.getHeight(), 2) + Math.pow(container.getWidth(), 2));
-        final Animator revealAnimator =
+        Animator revealAnimator =
                 ViewAnimationUtils.createCircularReveal(revealView,
                         revealView.getWidth(), revealView.getHeight(), 0.0f, radius);
         revealAnimator.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
@@ -62,11 +62,11 @@ public class RevealCustomColorActivity extends AppCompatActivity {
             }
         });
 
-        final Animator alphaAnimator = ObjectAnimator.ofFloat(revealView, View.ALPHA, 0.0f);
+        Animator alphaAnimator = ObjectAnimator.ofFloat(revealView, View.ALPHA, 0.0f);
         alphaAnimator.setDuration(
                 getResources().getInteger(android.R.integer.config_mediumAnimTime));
 
-        final AnimatorSet animatorSet = new AnimatorSet();
+        AnimatorSet animatorSet = new AnimatorSet();
         animatorSet.play(revealAnimator).before(alphaAnimator);
         animatorSet.setInterpolator(new AccelerateDecelerateInterpolator());
         animatorSet.addListener(new AnimatorListenerAdapter() {
