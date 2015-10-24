@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
@@ -48,14 +47,14 @@ public class RevealCustomColorActivity extends AppCompatActivity {
         revealView.setBottom(container.getHeight());
         revealView.setRight(container.getWidth());
         revealView.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
+
         overlay.add(revealView);
 
+        float radius = (float) Math.sqrt(Math.pow(container.getHeight(), 2) + Math.pow(container.getWidth(), 2));
         final Animator revealAnimator =
                 ViewAnimationUtils.createCircularReveal(revealView,
-                        revealView.getWidth(), revealView.getHeight(), 0.0f, container.getWidth() * 1.5f);
-        revealAnimator.setDuration(
-                getResources().getInteger(android.R.integer.config_longAnimTime));
-
+                        revealView.getWidth(), revealView.getHeight(), 0.0f, radius);
+        revealAnimator.setDuration(getResources().getInteger(android.R.integer.config_longAnimTime));
         revealAnimator.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -73,7 +72,6 @@ public class RevealCustomColorActivity extends AppCompatActivity {
         animatorSet.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
-                value.setText("0");
                 overlay.remove(revealView);
             }
         });
