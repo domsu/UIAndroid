@@ -22,6 +22,10 @@
         <activity
             android:name=".sample.RevealCustomColorActivity"
             android:label="@string/reveal_effect_label" />
+
+        <activity
+            android:name=".sample.SlideInOnAppStartActivity"
+            android:label="@string/slide_in_on_start_label" />
     </application>
 
 </manifest>
