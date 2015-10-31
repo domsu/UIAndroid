@@ -31,8 +31,10 @@ public class SlideInOnAppStartActivity extends AppCompatActivity {
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
 
-        if (hasFocus && !animated)
+        if (hasFocus && !animated) {
             startSlideInAnimation();
+            animated = true;
+        }
     }
 
     private void startSlideInAnimation() {
@@ -42,18 +44,20 @@ public class SlideInOnAppStartActivity extends AppCompatActivity {
         for (int i = 0; i < contentRoot.getChildCount(); i++) {
             View v = contentRoot.getChildAt(i);
 
-            v.setTranslationY(windowRoot.getHeight());
-            v.setAlpha(0);
-
-            v.animate()
-                    .translationY(0)
-                    .alpha(1)
-                    .setStartDelay(START_DELAY)
-                    .setDuration(DURATION_INITIAL + DURATION_NEXT_VIEW_FACTOR * i)
-                    .setInterpolator(new DecelerateInterpolator(INTERPOLATOR_FACTOR)).start();
+            animateSingleView(windowRoot, i, v);
         }
+    }
 
-        animated = true;
+    private void animateSingleView(ViewGroup windowRoot, int viewPosition, View view) {
+        view.setTranslationY(windowRoot.getHeight());
+        view.setAlpha(0);
+
+        view.animate()
+                .translationY(0)
+                .alpha(1)
+                .setStartDelay(START_DELAY)
+                .setDuration(DURATION_INITIAL + DURATION_NEXT_VIEW_FACTOR * viewPosition)
+                .setInterpolator(new DecelerateInterpolator(INTERPOLATOR_FACTOR)).start();
     }
 
 }
