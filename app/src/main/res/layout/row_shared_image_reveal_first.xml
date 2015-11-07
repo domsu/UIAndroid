@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:showIn="@layout/activity_shared_image_reveal_first">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/activity_shared_image_reveal_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/example_photo"
+        app:riv_corner_radius="30dip"
+        app:riv_oval="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14sp"
+        android:layout_toRightOf="@+id/activity_shared_image_reveal_avatar"
+        android:text="Anna Smith"
+        android:textColor="#635a5c"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="14dp"
+        android:layout_toRightOf="@+id/activity_shared_image_reveal_avatar"
+        android:text="Anna Smith"
+        android:textColor="#bbbbbd"
+        android:textSize="14sp" />
+
+</RelativeLayout>
+

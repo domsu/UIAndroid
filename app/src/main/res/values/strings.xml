@@ -4,6 +4,7 @@
 
     <string name="reveal_effect_label">Reveal effect</string>
     <string name="slide_in_on_start_label">Slide in on app start</string>
+    <string name="shared_image_reveal_effect">Shared image with reveal effect</string>
 
     <string name="wrong_device_version">Min sdk %d is required to run this example</string>
 </resources>

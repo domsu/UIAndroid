@@ -26,6 +26,14 @@
         <activity
             android:name=".sample.SlideInOnAppStartActivity"
             android:label="@string/slide_in_on_start_label" />
+
+        <activity
+            android:name=".sample.sharedImageWithRevealEffect.FirstActivity"
+            android:label="@string/shared_image_reveal_effect" />
+
+        <activity
+            android:name=".sample.sharedImageWithRevealEffect.SecondActivity"
+            android:label="@string/shared_image_reveal_effect" />
     </application>
 
 </manifest>
