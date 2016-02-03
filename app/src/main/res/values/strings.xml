@@ -6,4 +6,5 @@
     <string name="slide_in_on_start_label">Slide in on app start</string>
 
     <string name="wrong_device_version">Min sdk %d is required to run this example</string>
+    <string name="asset_reduction_label">Asset reduction</string>
 </resources>

@@ -26,6 +26,9 @@
         <activity
             android:name=".sample.SlideInOnAppStartActivity"
             android:label="@string/slide_in_on_start_label" />
+
+        <activity android:name=".sample.assetreduction.AssetReductionActivity"
+            android:label="@string/asset_reduction_label" />
     </application>
 
 </manifest>
