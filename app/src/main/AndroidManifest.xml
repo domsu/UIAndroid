@@ -29,6 +29,9 @@
 
         <activity android:name=".sample.assetreduction.AssetReductionActivity"
             android:label="@string/asset_reduction_label" />
+
+        <activity android:name=".sample.viewlayers.ViewLayersActivity"
+            android:label="@string/view_layers"/>
     </application>
 
 </manifest>

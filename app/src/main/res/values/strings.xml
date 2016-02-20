@@ -7,4 +7,5 @@
 
     <string name="wrong_device_version">Min sdk %d is required to run this example</string>
     <string name="asset_reduction_label">Asset reduction</string>
+    <string name="view_layers">View layers</string>
 </resources>

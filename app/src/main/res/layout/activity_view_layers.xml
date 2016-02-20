@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_view_layers_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/activity_view_layers_container_one"
+            layout="@layout/include_heavy_layout_view_layers" />
+
+        <include
+            android:id="@+id/activity_view_layers_container_two"
+            layout="@layout/include_heavy_layout_view_layers" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/activity_view_layers_animate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:text="Animate" />
+
+    <CheckBox
+        android:id="@+id/activity_view_layers_animate_view_layer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/activity_view_layers_animate_view_layer_incorrect"
+        android:layout_alignParentLeft="true"
+        android:text="With view layer" />
+
+    <CheckBox
+        android:id="@+id/activity_view_layers_animate_view_layer_incorrect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:text="With incorrect view layer" />
+
+</RelativeLayout>
